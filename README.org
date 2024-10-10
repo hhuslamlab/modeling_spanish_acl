@@ -123,6 +123,70 @@ All data are under the `data` directory. The data is organized as follows:
 │   │   └── mean_accuracies
 
 #+end_src
+
+*** Analysis: Memorization and Generalization (Section: 4.2)
+.
+├── analysis
+│   ├── memorization_generalization
+│   │   ├── l_shape
+│   │   │   ├── dataframes
+│   │   │   │   ├── 10L_90NL
+│   │   │   │   ├── 10L_90NL_bak
+│   │   │   │   ├── 50L_50NL
+│   │   │   │   ├── 50L_50NL_bak
+│   │   │   │   ├── 90L_10L_bak
+│   │   │   │   ├── 90L_10NL
+│   │   │   │   └── combine
+│   │   │   ├── logs
+│   │   │   ├── r_models
+│   │   │   │   ├── 10L_90NL
+│   │   │   │   ├── 50L_50NL
+│   │   │   │   └── 90L_10NL
+│   │   │   ├── section_6_4_1
+│   │   │   │   ├── attested
+│   │   │   │   │   ├── counts_all
+│   │   │   │   │   │   ├── 10L_90NL
+│   │   │   │   │   │   ├── 50L_50NL
+│   │   │   │   │   │   └── 90L_10NL
+│   │   │   │   │   ├── counts_l
+│   │   │   │   │   │   ├── 10L_90NL
+│   │   │   │   │   │   ├── 50L_50NL
+│   │   │   │   │   │   └── 90L_10NL
+│   │   │   │   │   ├── triples_all
+│   │   │   │   │   │   ├── 10L_90NL
+│   │   │   │   │   │   ├── 50L_50NL
+│   │   │   │   │   │   └── 90L_10NL
+│   │   │   │   │   └── triples_l
+│   │   │   │   │       ├── 10L_90NL
+│   │   │   │   │       ├── 50L_50NL
+│   │   │   │   │       └── 90L_10NL
+│   │   │   │   └── unattested
+│   │   │   │       ├── counts_all
+│   │   │   │       │   ├── 10L_90NL
+│   │   │   │       │   ├── 50L_50NL
+│   │   │   │       │   └── 90L_10NL
+│   │   │   │       ├── counts_l
+│   │   │   │       │   ├── 10L_90NL
+│   │   │   │       │   ├── 50L_50NL
+│   │   │   │       │   └── 90L_10NL
+│   │   │   │       ├── triples_all
+│   │   │   │       │   ├── 10L_90NL
+│   │   │   │       │   ├── 50L_50NL
+│   │   │   │       │   └── 90L_10NL
+│   │   │   │       └── triples_l
+│   │   │   │           ├── 10L_90NL
+│   │   │   │           ├── 50L_50NL
+│   │   │   │           └── 90L_10NL
+│   │   │   └── unattested_dataframes
+│   │   │       ├── 10L_90NL
+│   │   │       ├── 50L_50NL
+│   │   │       ├── 90L_10NL
+│   │   │       └── combine
+
+#+end_src
+
+
+*** Analysis: Consonant pair analysis (Section 4.3)
 .
 ├── analysis
 │   ├── compute_overlap_train_test_sf
@@ -252,67 +316,6 @@ All data are under the `data` directory. The data is organized as follows:
 │   │           │   ├── run2
 │   │           │   └── run3
 │   │           └── all_models
-
-#+end_src
-
-*** Analysis: Memorization and Generalization (Section: 4.2)
-.
-├── analysis
-│   ├── memorization_generalization
-│   │   ├── l_shape
-│   │   │   ├── dataframes
-│   │   │   │   ├── 10L_90NL
-│   │   │   │   ├── 10L_90NL_bak
-│   │   │   │   ├── 50L_50NL
-│   │   │   │   ├── 50L_50NL_bak
-│   │   │   │   ├── 90L_10L_bak
-│   │   │   │   ├── 90L_10NL
-│   │   │   │   └── combine
-│   │   │   ├── logs
-│   │   │   ├── r_models
-│   │   │   │   ├── 10L_90NL
-│   │   │   │   ├── 50L_50NL
-│   │   │   │   └── 90L_10NL
-│   │   │   ├── section_6_4_1
-│   │   │   │   ├── attested
-│   │   │   │   │   ├── counts_all
-│   │   │   │   │   │   ├── 10L_90NL
-│   │   │   │   │   │   ├── 50L_50NL
-│   │   │   │   │   │   └── 90L_10NL
-│   │   │   │   │   ├── counts_l
-│   │   │   │   │   │   ├── 10L_90NL
-│   │   │   │   │   │   ├── 50L_50NL
-│   │   │   │   │   │   └── 90L_10NL
-│   │   │   │   │   ├── triples_all
-│   │   │   │   │   │   ├── 10L_90NL
-│   │   │   │   │   │   ├── 50L_50NL
-│   │   │   │   │   │   └── 90L_10NL
-│   │   │   │   │   └── triples_l
-│   │   │   │   │       ├── 10L_90NL
-│   │   │   │   │       ├── 50L_50NL
-│   │   │   │   │       └── 90L_10NL
-│   │   │   │   └── unattested
-│   │   │   │       ├── counts_all
-│   │   │   │       │   ├── 10L_90NL
-│   │   │   │       │   ├── 50L_50NL
-│   │   │   │       │   └── 90L_10NL
-│   │   │   │       ├── counts_l
-│   │   │   │       │   ├── 10L_90NL
-│   │   │   │       │   ├── 50L_50NL
-│   │   │   │       │   └── 90L_10NL
-│   │   │   │       ├── triples_all
-│   │   │   │       │   ├── 10L_90NL
-│   │   │   │       │   ├── 50L_50NL
-│   │   │   │       │   └── 90L_10NL
-│   │   │   │       └── triples_l
-│   │   │   │           ├── 10L_90NL
-│   │   │   │           ├── 50L_50NL
-│   │   │   │           └── 90L_10NL
-│   │   │   └── unattested_dataframes
-│   │   │       ├── 10L_90NL
-│   │   │       ├── 50L_50NL
-│   │   │       ├── 90L_10NL
-│   │   │       └── combine
 
 #+end_src
 
