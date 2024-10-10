@@ -1,0 +1,2 @@
+model,overall_errors,overall_correct,suffix_errors_when_stems_are_correct,suffix_errors_when_stems_are_incorrect,total_predictions,error_rate,suffix_error_rate_when_stems_are_correct,suffix_error_rate_when_stems_are_incorrect,accuracy,accuracy_when_stems_are_correct,accuracy_when_stems_are_incorrect
+90L_10NL_3_4,3064,40441,869,2195,43505,7.04,2.0,5.05,92.96,90.96,87.91

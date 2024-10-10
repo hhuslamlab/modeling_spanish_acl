@@ -1,0 +1,2 @@
+model,num_er_errors,num_er_correct,total_er_predictions,er_present_in_verb_class,er_not_present_in_verb_class,er_error_rate,accuracy,accuracy_present_in_verb_class
+10L_90NL_1_4,140,4480,4620,0,140,3.03,96.97,0.0

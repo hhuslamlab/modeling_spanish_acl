@@ -1,0 +1,54 @@
+'data.frame':	460460 obs. of  8 variables:
+ $ condition        : chr  "90L_10NL" "90L_10NL" "90L_10NL" "90L_10NL" ...
+ $ run              : int  2 2 2 2 2 2 2 2 2 2 ...
+ $ model            : chr  "90L_10NL_2_3" "90L_10NL_2_3" "90L_10NL_2_3" "90L_10NL_2_3" ...
+ $ prediction_status: int  1 1 1 1 1 1 1 1 1 1 ...
+ $ frequency        : int  1068 1068 1068 3662 3662 3662 3662 3662 3662 3662 ...
+ $ triples          : chr  "('s', 's', 's')" "('s', 's', 's')" "('s', 's', 's')" "('s', 'sk', 's')" ...
+ $ prediction       : chr  "ofɾesejs" "ofɾesejs" "ofɾesejs" "ofɾesejs" ...
+ $ test             : chr  "ofɾesejs" "ofɾesejs" "ofɾesejs" "ofɾesejs" ...
+
+90L_10NL_1_1 90L_10NL_1_2 90L_10NL_1_3 90L_10NL_1_4 90L_10NL_2_1 90L_10NL_2_2 
+       38940        38940        38940        38940        38940        38940 
+90L_10NL_2_3 90L_10NL_2_4 90L_10NL_3_1 90L_10NL_3_2 90L_10NL_3_3 90L_10NL_3_4 
+       38940        38940        37235        37235        37235        37235 
+
+90L_10NL 
+  460460 
+
+     0      1 
+104466 355994 
+  1
+0 0
+1 1
+[1] "0" "1"
+Generalized linear mixed model fit by maximum likelihood (Laplace
+  Approximation) [glmerMod]
+ Family: binomial  ( logit )
+Formula: prediction_status_f ~ log10(frequency) + (1 | triples) + (1 |  
+    model)
+   Data: df
+
+      AIC       BIC    logLik  deviance  df.resid 
+ 402115.5  402159.7 -201053.8  402107.5    460456 
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-19.5380   0.1783   0.3164   0.5079   3.1039 
+
+Random effects:
+ Groups  Name        Variance Std.Dev.
+ triples (Intercept) 3.4474   1.8567  
+ model   (Intercept) 0.8738   0.9348  
+Number of obs: 460460, groups:  triples, 67; model, 12
+
+Fixed effects:
+                 Estimate Std. Error z value Pr(>|z|)    
+(Intercept)      -2.14835    0.09424  -22.80   <2e-16 ***
+log10(frequency)  1.40496    0.07035   19.97   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr)
+lg10(frqnc) -0.161

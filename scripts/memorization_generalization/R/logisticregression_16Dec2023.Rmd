@@ -1,0 +1,119 @@
+---
+  title: "This script computes the logistic regression models on frequency effects"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  html_document:
+  theme: default
+toc: yes
+pdf_document:
+  highlight: zenburn
+toc: yes
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+library(lme4)
+library(ggplot2)
+library(sjPlot)
+library(emmeans)
+library(ggthemes)
+COLS=colorblind_pal()(8)
+COLS = COLS[c(1,5,7)]
+# library(tidyverse)
+
+l_10_90_df <- read.csv("data/l_dataframes/dataframes/10L_90NL/combine.csv")
+l_50_50_df <- read.csv("data/l_dataframes/dataframes/50L_50NL/combine.csv")
+l_90_10_df <- read.csv("data/l_dataframes/dataframes/90L_10NL/combine.csv")
+
+nl_10_90_df <- read.csv("data/nl_dataframes/dataframes/10L_90NL/combine.csv")
+nl_50_50_df <- read.csv("data/nl_dataframes/dataframes/50L_50NL/combine.csv")
+nl_90_10_df <- read.csv("data/nl_dataframes/dataframes/90L_10NL/combine.csv")
+
+l_df = rbind(l_10_90_df,l_50_50_df,l_90_10_df)
+
+nl_df = rbind(nl_10_90_df,nl_50_50_df,nl_90_10_df)
+
+# table(df$prediction_status)
+#table(table(df$triples))
+# df.correct <- subset(df, df$prediction_status == 1)
+# summary(df.correct)
+
+## TODO: nested model comparison. Check AIC and BIC. BIC lower the better. more than 2 is significant. M1 = BIC of (1|run) and 1|model against 1|run, 1|model.
+
+## to avoid overfitting we used BIC and AIC. best model justified by the data.
+##
+
+
+str(l_df)
+table(l_df$model)
+table(l_df$condition)
+table(l_df$prediction_status)
+l_df$prediction_status_f = as.factor(as.character(l_df$prediction_status))
+contrasts(l_df$prediction_status_f)
+levels(l_df$prediction_status_f)
+l_df$frequency.log10 = log10(l_df$frequency)
+
+l_df$condition_f_sc = factor(as.character(l_df$condition),
+                levels = c("90L_10NL", "50L_50NL", "10L_90NL"))
+contrasts(l_df$condition_f_sc) <- contr.sum(3)/2
+contrasts(l_df$condition_f_sc)
+colnames(contrasts(l_df$condition_f_sc)) <- c("90L_10NL_vs_grand", "50L_50NL_vs_grand")
+
+
+l_model = glmer(prediction_status_f ~ frequency.log10 + condition_f_sc + frequency.log10:condition_f_sc + (1|triples) + (1|model), data=l_df, family="binomial")
+summary(l_model)
+
+
+ggplot_l_model = plot_model(l_model, type = "pred", terms = c("frequency.log10 [all]", "condition"), title = "")
+
+ggplot_l_model = ggplot_l_model + xlab("Input frequency of stem consonants (log10)") + ylab("Predicted accuracy (in %)") + scale_color_discrete(labels = c("10%L-90%NL", "50%L-50%NL","90%L-10%NL"))+ theme(legend.position="bottom")
+# + theme(legend.position = c(0.5, 1.1), legend.direction = "horizontal")
+ggplot_l_model
+
+cairo_pdf(filename = 'img/l_model_frequency_condition.pdf',
+          height = 5,width = 5)
+print(ggplot_l_model)
+dev.off()
+# plot_model(l_model, type = "pred", terms = c("condition"))
+
+
+# l_df_50L_50NL = subset(l_df,condition=='50L_50NL')
+# L_50L_50NL_model = glmer(prediction_status_f ~ frequency.log10  + (1|triples) + (1|model), data=l_df_50L_50NL, family="binomial")
+# summary(L_50L_50NL_model)
+# plot_model(L_50L_50NL_model, type = "pred", terms = c("frequency.log10 [all]"))
+```
+
+
+NL_shape itemns
+
+```{r}
+str(nl_df)
+table(nl_df$model)
+table(nl_df$condition)
+table(nl_df$prediction_status)
+nl_df$prediction_status_f = as.factor(as.character(nl_df$prediction_status))
+contrasts(nl_df$prediction_status_f)
+levels(nl_df$prediction_status_f)
+nl_df$frequency.log10 = log10(nl_df$frequency)
+
+
+nl_model = glmer(prediction_status_f ~ frequency.log10 + condition + frequency.log10:condition + (1|triples) + (1|model), data=nl_df, family="binomial")
+summary(nl_model)
+
+plot_model(nl_model, type = "pred", terms = c("frequency.log10 [all]", "condition"))
+plot_model(nl_model, type = "pred", terms = c("condition"))
+
+```
+
+
+# save(reg_model, file="../../../data/fixed_run/analysis/memorization_generalization/l_shape/r_models/10L_90NL/glmer.rda")
+
+# model = glmer(df.correct$prediction_status ~ df.correct$frequency + (1|df.correct$seen), family="logit", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
+# summary(model)
+
+
+# model = lm(df$prediction_status ~ df$frequency.log, family="binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
+# summary(model)
+
+```

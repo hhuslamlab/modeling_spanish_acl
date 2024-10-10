@@ -1,0 +1,2 @@
+model,nlshaped_overall_errors,nlshaped_overall_correct,total_nlshaped_predictions,nlshaped_error_rate,nlshaped_accuracy
+50L_50NL_3_1,3140,18640,33,14.42,85.58

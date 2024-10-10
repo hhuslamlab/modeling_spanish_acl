@@ -1,0 +1,2 @@
+model,lshaped_overall_errors,lshaped_overall_correct,total_lshaped_predictions,lshaped_error_rate,lshaped_accuracy
+90L_10NL_1_3,180,38705,59,0.46,99.54

@@ -1,0 +1,54 @@
+'data.frame':	225780 obs. of  8 variables:
+ $ condition        : chr  "50L_50NL" "50L_50NL" "50L_50NL" "50L_50NL" ...
+ $ run              : int  2 2 2 2 2 2 2 2 2 2 ...
+ $ model            : chr  "50L_50NL_2_4" "50L_50NL_2_4" "50L_50NL_2_4" "50L_50NL_2_4" ...
+ $ prediction_status: int  0 0 0 0 0 0 0 0 0 0 ...
+ $ frequency        : int  328 328 328 328 328 328 328 328 328 328 ...
+ $ triples          : chr  "('d', 'd', 'd')" "('d', 'd', 'd')" "('d', 'd', 'd')" "('d', 'd', 'd')" ...
+ $ prediction       : chr  "aksedejs" "aksedejs" "aksedejs" "aksedejs" ...
+ $ test             : chr  "aksedajs" "aksedajs" "aksedajs" "aksedajs" ...
+
+50L_50NL_1_1 50L_50NL_1_2 50L_50NL_1_3 50L_50NL_1_4 50L_50NL_2_1 50L_50NL_2_2 
+       19138        18907        18973        19140        18418        18246 
+50L_50NL_2_3 50L_50NL_2_4 50L_50NL_3_1 50L_50NL_3_2 50L_50NL_3_3 50L_50NL_3_4 
+       18169        18591        19128        19134        18797        19139 
+
+50L_50NL 
+  225780 
+
+     0      1 
+129711  96069 
+  1
+0 0
+1 1
+[1] "0" "1"
+Generalized linear mixed model fit by maximum likelihood (Laplace
+  Approximation) [glmerMod]
+ Family: binomial  ( logit )
+Formula: prediction_status_f ~ log10(frequency) + (1 | triples) + (1 |  
+    model)
+   Data: df
+
+     AIC      BIC   logLik deviance df.resid 
+179786.2 179827.5 -89889.1 179778.2   225776 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.8294 -0.2679 -0.1239  0.5251 17.5295 
+
+Random effects:
+ Groups  Name        Variance Std.Dev.
+ triples (Intercept) 1.108    1.052   
+ model   (Intercept) 4.663    2.160   
+Number of obs: 225780, groups:  triples, 34; model, 12
+
+Fixed effects:
+                 Estimate Std. Error z value Pr(>|z|)    
+(Intercept)      -0.30166    0.22940  -1.315    0.189    
+log10(frequency) -0.38179    0.03401 -11.226   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr)
+lg10(frqnc) -0.034

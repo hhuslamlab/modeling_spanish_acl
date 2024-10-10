@@ -1,0 +1,138 @@
+% This file was created with tikzplotlib v0.10.1.
+\begin{tikzpicture}
+
+\definecolor{darkgray176}{RGB}{176,176,176}
+\definecolor{gray}{RGB}{128,128,128}
+\definecolor{orange}{RGB}{255,165,0}
+\definecolor{steelblue33135187}{RGB}{33,135,187}
+
+\begin{axis}[
+tick align=outside,
+tick pos=left,
+x grid style={darkgray176},
+xmin=0.7625, xmax=3.2375,
+xtick style={color=black},
+xtick={1,2,3},
+xticklabels={10\%L-90\%NL,50\%L-50\%NL,90\%L-10\%NL},
+y grid style={darkgray176},
+ylabel={Accuracy (in \%)},
+ymin=0, ymax=94.0103167709139,
+ytick style={color=black}
+]
+\addplot [semithick, steelblue33135187]
+table {%
+1 20.6106258804842
+1 52.8893741195158
+};
+\addplot [semithick, steelblue33135187]
+table {%
+0.875 20.6106258804842
+1.125 20.6106258804842
+};
+\addplot [semithick, steelblue33135187]
+table {%
+0.875 52.8893741195158
+1.125 52.8893741195158
+};
+\addplot [semithick, orange, mark=*, mark size=3, mark options={solid}, only marks]
+table {%
+1 36.75
+};
+\addplot [semithick, steelblue33135187]
+table {%
+1 55.87476776136
+1 67.4585655719734
+};
+\addplot [semithick, steelblue33135187]
+table {%
+0.875 55.87476776136
+1.125 55.87476776136
+};
+\addplot [semithick, steelblue33135187]
+table {%
+0.875 67.4585655719734
+1.125 67.4585655719734
+};
+\addplot [semithick, gray, mark=*, mark size=3, mark options={solid}, only marks]
+table {%
+1 61.6666666666667
+};
+\addplot [semithick, steelblue33135187]
+table {%
+2 61.3885599214525
+2 83.4447734118808
+};
+\addplot [semithick, steelblue33135187]
+table {%
+1.875 61.3885599214525
+2.125 61.3885599214525
+};
+\addplot [semithick, steelblue33135187]
+table {%
+1.875 83.4447734118808
+2.125 83.4447734118808
+};
+\addplot [semithick, orange, mark=*, mark size=3, mark options={solid}, only marks]
+table {%
+2 72.4166666666667
+};
+\addplot [semithick, steelblue33135187]
+table {%
+2 46.2141132065936
+2 63.9525534600731
+};
+\addplot [semithick, steelblue33135187]
+table {%
+1.875 46.2141132065936
+2.125 46.2141132065936
+};
+\addplot [semithick, steelblue33135187]
+table {%
+1.875 63.9525534600731
+2.125 63.9525534600731
+};
+\addplot [semithick, gray, mark=*, mark size=3, mark options={solid}, only marks]
+table {%
+2 55.0833333333333
+};
+\addplot [semithick, steelblue33135187]
+table {%
+3 87.2179164468388
+3 90.4487502198279
+};
+\addplot [semithick, steelblue33135187]
+table {%
+2.875 87.2179164468388
+3.125 87.2179164468388
+};
+\addplot [semithick, steelblue33135187]
+table {%
+2.875 90.4487502198279
+3.125 90.4487502198279
+};
+\addplot [semithick, orange, mark=*, mark size=3, mark options={solid}, only marks]
+table {%
+3 88.8333333333333
+};
+\addplot [semithick, steelblue33135187]
+table {%
+3 19.2174191981064
+3 29.115914135227
+};
+\addplot [semithick, steelblue33135187]
+table {%
+2.875 19.2174191981064
+3.125 19.2174191981064
+};
+\addplot [semithick, steelblue33135187]
+table {%
+2.875 29.115914135227
+3.125 29.115914135227
+};
+\addplot [semithick, gray, mark=*, mark size=3, mark options={solid}, only marks]
+table {%
+3 24.1666666666667
+};
+\end{axis}
+
+\end{tikzpicture}

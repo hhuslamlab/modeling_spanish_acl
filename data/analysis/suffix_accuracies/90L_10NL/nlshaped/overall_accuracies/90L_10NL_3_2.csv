@@ -1,0 +1,2 @@
+model,nlshaped_overall_errors,nlshaped_overall_correct,total_nlshaped_predictions,nlshaped_error_rate,nlshaped_accuracy
+90L_10NL_3_2,2852,1768,59,61.73,38.27

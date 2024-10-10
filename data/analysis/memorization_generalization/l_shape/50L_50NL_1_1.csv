@@ -1,0 +1,2 @@
+num_correct_predictions,num_incorrect_predictions,per_correct_predictions,num_attested_triples,num_unattested_triples,seen_triples_correct_predictions,seen_triples_wrong_predictions,unseen_triples_correct_predictions,unseen_triples_wrong_predictions,per_seen_triples_correct,per_unseen_triples_correct
+17552,4228,0.81,21780,0,17552,4228,0,0,80.59,NA

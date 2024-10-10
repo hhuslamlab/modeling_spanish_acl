@@ -1,0 +1,2 @@
+condition,run,model,num_incorrect_predictions,num_of_triples_seen_in_training,num_of_triples_unseen_in_training
+10L_90NL,2,10L_90NL_2_4,1111,604,507

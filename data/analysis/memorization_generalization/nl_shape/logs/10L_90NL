@@ -1,0 +1,54 @@
+'data.frame':	403673 obs. of  8 variables:
+ $ condition        : chr  "10L_90NL" "10L_90NL" "10L_90NL" "10L_90NL" ...
+ $ run              : int  1 1 1 1 1 1 1 1 1 1 ...
+ $ model            : chr  "10L_90NL_1_1" "10L_90NL_1_1" "10L_90NL_1_1" "10L_90NL_1_1" ...
+ $ prediction_status: int  0 0 0 0 0 0 0 0 0 0 ...
+ $ frequency        : int  496 496 496 496 496 496 496 496 496 496 ...
+ $ triples          : chr  "('ɲ', 'ɲ', 'ɲ')" "('ɲ', 'ɲ', 'ɲ')" "('ɲ', 'ɲ', 'ɲ')" "('ɲ', 'ɲ', 'ɲ')" ...
+ $ prediction       : chr  "ɾasuɡajs" "ɾasuɡajs" "ɾasuɡajs" "ɾasuɡajs" ...
+ $ test             : chr  "ɾasɡuɲajs" "ɾasɡuɲajs" "ɾasɡuɲajs" "ɾasɡuɲajs" ...
+
+10L_90NL_1_1 10L_90NL_1_2 10L_90NL_1_3 10L_90NL_1_4 10L_90NL_2_1 10L_90NL_2_2 
+       35807        35861        35891        36028        36298        35901 
+10L_90NL_2_3 10L_90NL_2_4 10L_90NL_3_1 10L_90NL_3_2 10L_90NL_3_3 10L_90NL_3_4 
+       35965        36300        28976        28872        28887        28887 
+
+10L_90NL 
+  403673 
+
+     0      1 
+262379 141294 
+  1
+0 0
+1 1
+[1] "0" "1"
+Generalized linear mixed model fit by maximum likelihood (Laplace
+  Approximation) [glmerMod]
+ Family: binomial  ( logit )
+Formula: prediction_status_f ~ log10(frequency) + (1 | triples) + (1 |  
+    model)
+   Data: df
+
+      AIC       BIC    logLik  deviance  df.resid 
+ 294928.4  294972.1 -147460.2  294920.4    403669 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-6.4523 -0.3115 -0.1731  0.4362 15.9222 
+
+Random effects:
+ Groups  Name        Variance Std.Dev.
+ triples (Intercept) 3.192    1.787   
+ model   (Intercept) 3.831    1.957   
+Number of obs: 403673, groups:  triples, 50; model, 12
+
+Fixed effects:
+                 Estimate Std. Error z value Pr(>|z|)    
+(Intercept)      -4.34606    0.13124  -33.12   <2e-16 ***
+log10(frequency)  1.72840    0.01924   89.81   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr)
+lg10(frqnc) -0.017

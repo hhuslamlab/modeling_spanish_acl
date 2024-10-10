@@ -1,0 +1,2 @@
+model,num_ir_errors,num_ir_correct,total_ir_predictions,ir_present_in_verb_class,ir_not_present_in_verb_class,ir_error_rate,accuracy,accuracy_present_in_verb_class
+50L_50NL_2_2,3651,4214,7865,3275,376,46.42,53.58,89.7

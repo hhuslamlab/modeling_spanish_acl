@@ -1,0 +1,80 @@
+% This file was created with tikzplotlib v0.10.1.
+\begin{tikzpicture}
+
+\definecolor{darkgray176}{RGB}{176,176,176}
+\definecolor{steelblue33135187}{RGB}{33,135,187}
+\definecolor{tomato2446754}{RGB}{244,67,54}
+
+\begin{axis}[
+tick align=outside,
+tick pos=left,
+x grid style={darkgray176},
+xmin=0.7625, xmax=3.2375,
+xtick style={color=black},
+xtick={1,2,3},
+xticklabels={10\%L-90\%NL,50\%L-50\%NL,90\%L-10\%NL},
+y grid style={darkgray176},
+ylabel={Accuracy (in \%)},
+ymin=0, ymax=84.1917539307549,
+ytick style={color=black}
+]
+\addplot [semithick, steelblue33135187]
+table {%
+1 54.1881302830512
+1 63.5435363836154
+};
+\addplot [semithick, steelblue33135187]
+table {%
+0.875 54.1881302830512
+1.125 54.1881302830512
+};
+\addplot [semithick, steelblue33135187]
+table {%
+0.875 63.5435363836154
+1.125 63.5435363836154
+};
+\addplot [semithick, black, mark=*, mark size=3, mark options={solid}, only marks]
+table {%
+1 58.8658333333333
+};
+\addplot [semithick, steelblue33135187]
+table {%
+2 56.6621480190653
+2 70.3370186476014
+};
+\addplot [semithick, steelblue33135187]
+table {%
+1.875 56.6621480190653
+2.125 56.6621480190653
+};
+\addplot [semithick, steelblue33135187]
+table {%
+1.875 70.3370186476014
+2.125 70.3370186476014
+};
+\addplot [semithick, black, mark=*, mark size=3, mark options={solid}, only marks]
+table {%
+2 63.4995833333333
+};
+\addplot [semithick, steelblue33135187]
+table {%
+3 80.1494900524691
+3 82.7630099475309
+};
+\addplot [semithick, steelblue33135187]
+table {%
+2.875 80.1494900524691
+3.125 80.1494900524691
+};
+\addplot [semithick, steelblue33135187]
+table {%
+2.875 82.7630099475309
+3.125 82.7630099475309
+};
+\addplot [semithick, black, mark=*, mark size=3, mark options={solid}, only marks]
+table {%
+3 81.45625
+};
+\end{axis}
+
+\end{tikzpicture}

@@ -1,0 +1,424 @@
+#+TITLE: hmall
+
+
+* Installation
+
+*** Poetry
+#+begin_src shell
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+
+#+end_src
+
+
+*** Python packages
+#+begin_src shell
+poetry install
+#+end_src
+
+* Usage
+
+** Data
+
+All data are under the `data` directory. The data is organized as follows:
+
+*** Dataset (Section 3: Methodology)
+
+#+begin_src markdown
+.
+├── 10L_90NL
+│   ├── dev
+│   │   ├── run1
+│   │   │  
+│   │   ├── run2
+│   │   │
+│   │   └── run3
+│   │
+│   ├── test
+│   │   ├── run1
+│   │   │
+│   │   ├── run2
+│   │   │
+│   │   └── run3
+│   │  
+│   └── train
+│       ├── run1
+│       │  
+│       ├── run2
+│       │  
+│       └── run3
+│  
+├── 50L_50NL
+│   ├── dev
+│   │   ├── run1
+│   │   │  
+│   │   ├── run2
+│   │   │  
+│   │   └── run3
+│   │  
+│   ├── test
+│   │   ├── run1
+│   │   │  
+│   │   ├── run2
+│   │   │  
+│   │   └── run3
+│   │  
+│   └── train
+│       ├── run1
+│       │  
+│       ├── run2
+│       │  
+│       └── run3
+│  
+├── 90L_10NL
+│   ├── dev
+│   │   ├── run1
+│   │   │  
+│   │   ├── run2
+│   │   │  
+│   │   └── run3
+│   │  
+│   ├── test
+│   │   ├── run1
+│   │   │  
+│   │   ├── run2
+│   │   │  
+│   │   └── run3
+│   │  
+│   └── train
+│       ├── run1
+│       │  
+│       ├── run2
+│       │  
+│       └── run3
+
+#+end_src
+
+*** Predictions
+
+#+begin_src markdown
+.
+└── predictions
+
+#+end_src
+
+
+*** Analysis (Section 4)
+
+#+begin_src markdown
+.  
+├── analysis
+│   ├── accuracies
+│   ├── l_nl_accuracies
+│   ├── stem_accuracies
+
+#+end_src
+
+*** Analysis: Cell combinations (Section 4.1)
+
+#+begin_src markdown
+.
+├── analysis
+│   ├── cell_combinations
+│   │   ├── cell_infos
+│   │   └── mean_accuracies
+
+#+end_src
+.
+├── analysis
+│   ├── compute_overlap_train_test_sf
+│   │   └── all
+│   │       ├── 10L_90NL
+│   │       ├── 50L_50NL
+│   │       └── 90L_10NL
+│   ├── lemmas_sf
+│   │   ├── dev
+│   │   ├── test
+│   │   │   ├── run1
+│   │   │   ├── run2
+│   │   │   └── run3
+│   │   └── train
+│   │       ├── run1
+│   │       ├── run2
+│   │       └── run3
+│   ├── overlap_lemma_train_test_sf
+│   │   ├── all
+│   │   └── l_shaped
+│   │       ├── 10L_90NL
+│   │       ├── 50L_50NL
+│   │       └── 90L_10NL
+│   ├── lemma_test_pred_sf
+│   │   ├── 10L_90NL
+│   │   │   └── avg
+│   │   ├── 50L_50NL
+│   │   │   └── avg
+│   │   └── 90L_10NL
+│   │       └── avg
+│   ├── lemma_train_test_sf
+│   │   ├── all
+│   │   │   ├── test
+│   │   │   │   ├── run1
+│   │   │   │   ├── run2
+│   │   │   │   └── run3
+│   │   │   └── train
+│   │   │       ├── run1
+│   │   │       ├── run2
+│   │   │       └── run3
+│   │   └── l_shaped
+│   │       ├── test
+│   │       │   ├── run1
+│   │       │   ├── run2
+│   │       │   └── run3
+│   │       └── train
+│   │           ├── run1
+│   │           ├── run2
+│   │           └── run3
+│   ├── l_shaped
+│   │   └── lemma_sf
+│   │       ├── pred
+│   │       │   ├── 10L_90NL
+│   │       │   │   ├── figure_3
+│   │       │   │   │   ├── run1
+│   │       │   │   │   ├── run2
+│   │       │   │   │   └── run3
+│   │       │   │   ├── run1
+│   │       │   │   ├── run2
+│   │       │   │   └── run3
+│   │       │   ├── 50L_50NL
+│   │       │   │   ├── figure_3
+│   │       │   │   │   ├── run1
+│   │       │   │   │   ├── run2
+│   │       │   │   │   └── run3
+│   │       │   │   ├── run1
+│   │       │   │   ├── run2
+│   │       │   │   └── run3
+│   │       │   ├── 90L_10NL
+│   │       │   │   ├── figure_3
+│   │       │   │   │   ├── run1
+│   │       │   │   │   ├── run2
+│   │       │   │   │   └── run3
+│   │       │   │   ├── run1
+│   │       │   │   ├── run2
+│   │       │   │   └── run3
+│   │       │   └── all_models
+│   │       ├── test
+│   │       │   ├── 10L_90NL
+│   │       │   │   ├── appendix_f
+│   │       │   │   │   ├── run1
+│   │       │   │   │   ├── run2
+│   │       │   │   │   └── run3
+│   │       │   │   ├── run1
+│   │       │   │   ├── run2
+│   │       │   │   └── run3
+│   │       │   ├── 50L_50NL
+│   │       │   │   ├── appendix_f
+│   │       │   │   │   ├── run1
+│   │       │   │   │   ├── run2
+│   │       │   │   │   └── run3
+│   │       │   │   ├── run1
+│   │       │   │   ├── run2
+│   │       │   │   └── run3
+│   │       │   ├── 90L_10NL
+│   │       │   │   ├── appendix_f
+│   │       │   │   │   ├── run1
+│   │       │   │   │   ├── run2
+│   │       │   │   │   └── run3
+│   │       │   │   ├── run1
+│   │       │   │   ├── run2
+│   │       │   │   └── run3
+│   │       │   └── all_models
+│   │       └── train
+│   │           ├── 10L_90NL
+│   │           │   ├── appendix_f
+│   │           │   │   ├── run1
+│   │           │   │   ├── run2
+│   │           │   │   └── run3
+│   │           │   ├── run1
+│   │           │   ├── run2
+│   │           │   └── run3
+│   │           ├── 50L_50NL
+│   │           │   ├── appendix_f
+│   │           │   │   ├── run1
+│   │           │   │   ├── run2
+│   │           │   │   └── run3
+│   │           │   ├── run1
+│   │           │   ├── run2
+│   │           │   └── run3
+│   │           ├── 90L_10NL
+│   │           │   ├── appendix_f
+│   │           │   │   ├── run1
+│   │           │   │   ├── run2
+│   │           │   │   └── run3
+│   │           │   ├── run1
+│   │           │   ├── run2
+│   │           │   └── run3
+│   │           └── all_models
+
+#+end_src
+
+*** Analysis: Memorization and Generalization (Section: 4.2)
+.
+├── analysis
+│   ├── memorization_generalization
+│   │   ├── l_shape
+│   │   │   ├── dataframes
+│   │   │   │   ├── 10L_90NL
+│   │   │   │   ├── 10L_90NL_bak
+│   │   │   │   ├── 50L_50NL
+│   │   │   │   ├── 50L_50NL_bak
+│   │   │   │   ├── 90L_10L_bak
+│   │   │   │   ├── 90L_10NL
+│   │   │   │   └── combine
+│   │   │   ├── logs
+│   │   │   ├── r_models
+│   │   │   │   ├── 10L_90NL
+│   │   │   │   ├── 50L_50NL
+│   │   │   │   └── 90L_10NL
+│   │   │   ├── section_6_4_1
+│   │   │   │   ├── attested
+│   │   │   │   │   ├── counts_all
+│   │   │   │   │   │   ├── 10L_90NL
+│   │   │   │   │   │   ├── 50L_50NL
+│   │   │   │   │   │   └── 90L_10NL
+│   │   │   │   │   ├── counts_l
+│   │   │   │   │   │   ├── 10L_90NL
+│   │   │   │   │   │   ├── 50L_50NL
+│   │   │   │   │   │   └── 90L_10NL
+│   │   │   │   │   ├── triples_all
+│   │   │   │   │   │   ├── 10L_90NL
+│   │   │   │   │   │   ├── 50L_50NL
+│   │   │   │   │   │   └── 90L_10NL
+│   │   │   │   │   └── triples_l
+│   │   │   │   │       ├── 10L_90NL
+│   │   │   │   │       ├── 50L_50NL
+│   │   │   │   │       └── 90L_10NL
+│   │   │   │   └── unattested
+│   │   │   │       ├── counts_all
+│   │   │   │       │   ├── 10L_90NL
+│   │   │   │       │   ├── 50L_50NL
+│   │   │   │       │   └── 90L_10NL
+│   │   │   │       ├── counts_l
+│   │   │   │       │   ├── 10L_90NL
+│   │   │   │       │   ├── 50L_50NL
+│   │   │   │       │   └── 90L_10NL
+│   │   │   │       ├── triples_all
+│   │   │   │       │   ├── 10L_90NL
+│   │   │   │       │   ├── 50L_50NL
+│   │   │   │       │   └── 90L_10NL
+│   │   │   │       └── triples_l
+│   │   │   │           ├── 10L_90NL
+│   │   │   │           ├── 50L_50NL
+│   │   │   │           └── 90L_10NL
+│   │   │   └── unattested_dataframes
+│   │   │       ├── 10L_90NL
+│   │   │       ├── 50L_50NL
+│   │   │       ├── 90L_10NL
+│   │   │       └── combine
+
+#+end_src
+
+*** Missclassifications
+
+#+begin_src markdown
+.
+├── analysis
+│   ├── misclassification
+│   │   ├── 10L_90NL
+│   │   │   ├── src
+│   │   │   │   ├── test
+│   │   │   │   └── train
+│   │   │   └── tgt
+│   │   │       ├── test
+│   │   │       └── train
+│   │   ├── 50L_50NL
+│   │   │   ├── src
+│   │   │   │   ├── test
+│   │   │   │   └── train
+│   │   │   └── tgt
+│   │   │       ├── test
+│   │   │       └── train
+│   │   └── 90L_10NL
+│   │       ├── src
+│   │       │   ├── test
+│   │       │   └── train
+│   │       └── tgt
+│   │           ├── test
+│   │           └── train
+#+end_src
+
+All plots can be found here:
+
+#+begin_src markdown
+.
+├── analysis
+│   ├── plots
+
+#+end_src
+
+#+begin_src markdown
+│   ├── prediction_status
+│   │   ├── all
+│   │   ├── l_shape
+│   │   └── nl_shape
+│   ├── pred_sf
+│   ├── section_6_3
+│   │   └── overlap_sf_all_conditions
+│   ├── sfs
+│   │   ├── l_shape
+│   │   │   └── pred
+│   │   ├── pred
+│   │   └── train
+│   ├── shape_info
+│   ├── src_sf
+│   │   ├── test
+│   │   └── train
+│   ├── stems
+
+#+end_src
+
+*** Analysis: Suffixes (Section 4.3)
+#+begin_src markdown
+.
+├── analysis
+│   ├── suffix_accuracies
+│   │   ├── 10L_90NL
+│   │   │   ├── ar_suffixes
+│   │   │   ├── er_suffixes
+│   │   │   ├── ir_suffixes
+│   │   │   ├── lshaped
+│   │   │   │   └── overall_accuracies
+│   │   │   ├── nlshaped
+│   │   │   │   └── overall_accuracies
+│   │   │   └── overall_accuracies
+│   │   ├── 50L_50NL
+│   │   │   ├── ar_suffixes
+│   │   │   ├── er_suffixes
+│   │   │   ├── ir_suffixes
+│   │   │   ├── lshaped
+│   │   │   │   └── overall_accuracies
+│   │   │   ├── nlshaped
+│   │   │   │   └── overall_accuracies
+│   │   │   └── overall_accuracies
+│   │   └── 90L_10NL
+│   │       ├── ar_suffixes
+│   │       ├── er_suffixes
+│   │       ├── ir_suffixes
+│   │       ├── lshaped
+│   │       │   └── overall_accuracies
+│   │       ├── nlshaped
+│   │       │   └── overall_accuracies
+│   │       └── overall_accuracies
+│   ├── suffix_errors
+│   │   ├── 10L_90NL
+│   │   │   ├── ar_suffixes
+│   │   │   ├── er_suffixes
+│   │   │   └── ir_suffixes
+│   │   ├── 50L_50NL
+│   │   │   ├── ar_suffixes
+│   │   │   ├── er_suffixes
+│   │   │   └── ir_suffixes
+│   │   └── 90L_10NL
+│   │       ├── ar_suffixes
+│   │       ├── er_suffixes
+│   │       └── ir_suffixes
+
+#+end_src
