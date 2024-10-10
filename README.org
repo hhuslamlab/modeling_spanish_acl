@@ -125,6 +125,7 @@ All data are under the `data` directory. The data is organized as follows:
 #+end_src
 
 *** Analysis: Memorization and Generalization (Section: 4.2)
+#+begin_src markdown
 .
 ├── analysis
 │   ├── memorization_generalization
@@ -187,6 +188,8 @@ All data are under the `data` directory. The data is organized as follows:
 
 
 *** Analysis: Consonant pair analysis (Section 4.3)
+
+#+begin_src markdown
 .
 ├── analysis
 │   ├── compute_overlap_train_test_sf
