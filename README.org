@@ -21,18 +21,17 @@ To replicate the analysis of each analysis section, run the *standalone scripts*
 
 ** Training and evaluation
 
-All training and evaluation scripts are here:
+All training and evaluation scripts are in the following dirs under the `scripts` dir:
 
 #+begin_src markdown
 .
-├── scripts
-│   ├── model
+├── model
 
 #+end_src markdown
 
 *** Dataset (Section 3: Methodology)
 
-The data for all three conditions (10L_90NL, 50L_50NL, 90L_10NL) is organized in the `data` directory as follows:
+The data for all three conditions (10L_90NL, 50L_50NL, 90L_10NL) is organized in the `data` dir as follows:
 
 #+begin_src markdown
 .
@@ -106,7 +105,7 @@ The data for all three conditions (10L_90NL, 50L_50NL, 90L_10NL) is organized in
 
 *** Predictions
 
-All predictions are organized in the `data` directory as follows:
+All predictions are organized in the `data` dir as follows:
 
 #+begin_src markdown
 .
@@ -124,7 +123,7 @@ To get the overall accuracies and stem accuracies run the scripts in the followi
 ├── stem_accuracies
 ├── l_nl_accuracies
 
-The output is under the `data` directory as follows:
+The output is under the `data` dir as follows:
 
 #+begin_src markdown
 .  
@@ -137,7 +136,7 @@ The output is under the `data` directory as follows:
 
 *** Analysis: Cell combinations (Section 4.1)
 
-To replicate the analysis of cell combinations, run the following scripts in the `scripts` directory:
+To replicate the analysis of cell combinations, run the following scripts in the `scripts` dir:
 
 #+begin_src markdown
 .
@@ -145,7 +144,7 @@ To replicate the analysis of cell combinations, run the following scripts in the
 
 #+end_src
 
-The output is under the `data` directory as follows:
+The output is under the `data` dir as follows:
 
 #+begin_src markdown
 .
@@ -158,7 +157,7 @@ The output is under the `data` directory as follows:
 
 *** Analysis: Memorization and Generalization (Section: 4.2)
 
-To replicate the analysis of memorization and generalization, run the following scripts in the `scripts` directory:
+To replicate the analysis of memorization and generalization, run the following scripts in the `scripts` dir:
 
 #+begin_src markdown
 .
@@ -166,7 +165,7 @@ To replicate the analysis of memorization and generalization, run the following 
 
 #+begin_src markdown
 
-The output is under the `data` directory as follows:
+The output is under the `data` dir as follows:
 
 #+begin_src markdown
 .
@@ -232,14 +231,14 @@ The output is under the `data` directory as follows:
 
 *** Analysis: Consonant pair analysis (Section 4.3)
 
-To replicate the analysis of consonant pairs, run the following scripts in the `scripts` directory:
+To replicate the analysis of consonant pairs, run the following scripts in the `scripts` dir:
 #+begin_src markdown
 .
 ├── consonant_pairs
 
 #+end_src markdown
 
-The output is under the `data` directory as follows:
+The output is under the `data` dir as follows:
 
 #+begin_src markdown
 .
@@ -376,7 +375,7 @@ The output is under the `data` directory as follows:
 
 *** Analysis: Suffix analysis (Section 4.3)
 
-To replicate the Suffix analysis (Section 4.3), run the following scripts in the `scripts` directory:
+To replicate the Suffix analysis (Section 4.3), run the following scripts in the `scripts` dir:
 
 #+begin_src markdown
 .
@@ -384,7 +383,7 @@ To replicate the Suffix analysis (Section 4.3), run the following scripts in the
 
 #+end_src
 
-The output is under the `data` directory as follows:
+The output is under the `data` dir as follows:
 
 #+begin_src markdown
 .
@@ -447,7 +446,7 @@ All plots can be found here:
 
 *** Missclassifications
 
-The misclassified L-shaped and NL-shaped words are under the `data` directory as follows:
+The misclassified L-shaped and NL-shaped words are under the `data` dir as follows:
 
 #+begin_src markdown
 .
