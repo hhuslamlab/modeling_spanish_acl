@@ -17,11 +17,22 @@ poetry install
 
 * Usage
 
-** Data
+To replicate the analysis of each analysis section, run the *standalone scripts* in the following directories:
 
-All data are under the `data` directory. The data is organized as follows:
+** Training and evaluation
+
+All training and evaluation scripts are here:
+
+#+begin_src markdown
+.
+├── scripts
+│   ├── model
+
+#+end_src markdown
 
 *** Dataset (Section 3: Methodology)
+
+The data for all three conditions (10L_90NL, 50L_50NL, 90L_10NL) is organized in the `data` directory as follows:
 
 #+begin_src markdown
 .
@@ -95,14 +106,25 @@ All data are under the `data` directory. The data is organized as follows:
 
 *** Predictions
 
+All predictions are organized in the `data` directory as follows:
+
 #+begin_src markdown
 .
 └── predictions
 
 #+end_src
 
-
 *** Analysis (Section 4)
+
+To get the overall accuracies and stem accuracies run the scripts in the following dirs under the `scripts` dir:
+
+#+begin_src markdown
+.
+├── overall_accuracies
+├── stem_accuracies
+├── l_nl_accuracies
+
+The output is under the `data` directory as follows:
 
 #+begin_src markdown
 .  
@@ -115,6 +137,16 @@ All data are under the `data` directory. The data is organized as follows:
 
 *** Analysis: Cell combinations (Section 4.1)
 
+To replicate the analysis of cell combinations, run the following scripts in the `scripts` directory:
+
+#+begin_src markdown
+.
+|── cell_combinations
+
+#+end_src
+
+The output is under the `data` directory as follows:
+
 #+begin_src markdown
 .
 ├── analysis
@@ -125,6 +157,17 @@ All data are under the `data` directory. The data is organized as follows:
 #+end_src
 
 *** Analysis: Memorization and Generalization (Section: 4.2)
+
+To replicate the analysis of memorization and generalization, run the following scripts in the `scripts` directory:
+
+#+begin_src markdown
+.
+├── memorization_generalization
+
+#+begin_src markdown
+
+The output is under the `data` directory as follows:
+
 #+begin_src markdown
 .
 ├── analysis
@@ -188,6 +231,15 @@ All data are under the `data` directory. The data is organized as follows:
 
 
 *** Analysis: Consonant pair analysis (Section 4.3)
+
+To replicate the analysis of consonant pairs, run the following scripts in the `scripts` directory:
+#+begin_src markdown
+.
+├── consonant_pairs
+
+#+end_src markdown
+
+The output is under the `data` directory as follows:
 
 #+begin_src markdown
 .
@@ -322,66 +374,18 @@ All data are under the `data` directory. The data is organized as follows:
 
 #+end_src
 
-*** Missclassifications
+*** Analysis: Suffix analysis (Section 4.3)
+
+To replicate the Suffix analysis (Section 4.3), run the following scripts in the `scripts` directory:
 
 #+begin_src markdown
 .
-├── analysis
-│   ├── misclassification
-│   │   ├── 10L_90NL
-│   │   │   ├── src
-│   │   │   │   ├── test
-│   │   │   │   └── train
-│   │   │   └── tgt
-│   │   │       ├── test
-│   │   │       └── train
-│   │   ├── 50L_50NL
-│   │   │   ├── src
-│   │   │   │   ├── test
-│   │   │   │   └── train
-│   │   │   └── tgt
-│   │   │       ├── test
-│   │   │       └── train
-│   │   └── 90L_10NL
-│   │       ├── src
-│   │       │   ├── test
-│   │       │   └── train
-│   │       └── tgt
-│   │           ├── test
-│   │           └── train
-#+end_src
-
-All plots can be found here:
-
-#+begin_src markdown
-.
-├── analysis
-│   ├── plots
+├── suffix_errors
 
 #+end_src
 
-#+begin_src markdown
-│   ├── prediction_status
-│   │   ├── all
-│   │   ├── l_shape
-│   │   └── nl_shape
-│   ├── pred_sf
-│   ├── section_6_3
-│   │   └── overlap_sf_all_conditions
-│   ├── sfs
-│   │   ├── l_shape
-│   │   │   └── pred
-│   │   ├── pred
-│   │   └── train
-│   ├── shape_info
-│   ├── src_sf
-│   │   ├── test
-│   │   └── train
-│   ├── stems
+The output is under the `data` directory as follows:
 
-#+end_src
-
-*** Analysis: Suffixes (Section 4.3)
 #+begin_src markdown
 .
 ├── analysis
@@ -427,4 +431,47 @@ All plots can be found here:
 │   │       ├── er_suffixes
 │   │       └── ir_suffixes
 
+#+end_src
+
+*** Analysis: Plots
+
+All plots can be found here:
+
+#+begin_src markdown
+.
+├── analysis
+│   ├── plots
+
+#+end_src
+
+
+*** Missclassifications
+
+The misclassified L-shaped and NL-shaped words are under the `data` directory as follows:
+
+#+begin_src markdown
+.
+├── analysis
+│   ├── misclassification
+│   │   ├── 10L_90NL
+│   │   │   ├── src
+│   │   │   │   ├── test
+│   │   │   │   └── train
+│   │   │   └── tgt
+│   │   │       ├── test
+│   │   │       └── train
+│   │   ├── 50L_50NL
+│   │   │   ├── src
+│   │   │   │   ├── test
+│   │   │   │   └── train
+│   │   │   └── tgt
+│   │   │       ├── test
+│   │   │       └── train
+│   │   └── 90L_10NL
+│   │       ├── src
+│   │       │   ├── test
+│   │       │   └── train
+│   │       └── tgt
+│   │           ├── test
+│   │           └── train
 #+end_src
