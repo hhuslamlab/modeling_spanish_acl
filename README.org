@@ -9,6 +9,8 @@ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poet
 
 #+end_src
 
+- Python3.9
+- PyTorch version >= 1.10.0
 
 *** Python packages
 #+begin_src shell
