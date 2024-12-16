@@ -1,4 +1,9 @@
-""" get L and NL accuracy """ import pandas as pd from config import all_models if __name__ == "__main__": for model in all_models:
+""" get L and NL accuracy """
+import pandas as pd
+from config import all_models
+
+if __name__ == "__main__":
+    for model in all_models:
         condition = model.split("_")[0] + "_" + model.split("_")[1]
         run = model.split("_")[2]
         with open(

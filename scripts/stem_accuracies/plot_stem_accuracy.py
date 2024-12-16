@@ -34,7 +34,7 @@ def plot_confidence_interval(
 
 def final(filename):
     data = pd.read_csv(
-        "../../data/fixed_run/analysis/stem_accuracies/" + filename + ".csv"
+        "../../data/analysis/stem_accuracies/" + filename + ".csv"
     )
     return {
         "l_acc": round(data["l_acc"].tolist()[0]),
@@ -79,4 +79,4 @@ if __name__ == "__main__":
     plt.ylim(bottom=0)
     # plt.legend(('L-shape', 'NL-shape'))
     plt.title("")
-    tikzplotlib.save("../../data/fixed_run/analysis/plots/stem_accuracies.tex")
+    tikzplotlib.save("../../data/analysis/plots/stem_accuracies.tex")

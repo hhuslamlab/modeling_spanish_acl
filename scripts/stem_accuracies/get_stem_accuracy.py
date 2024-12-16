@@ -10,11 +10,12 @@ if __name__ == "__main__":
     df = pd.DataFrame()
 
     for model in all_models:
-        model_df = pd.read_csv("../../data/fixed_run/analysis/stems/" + model + ".csv")
+        model_df = pd.read_csv("../../data/analysis/stems/" + model + ".csv")
         predictions = model_df["preds_stems"].tolist()
         test_data = model_df["test_stems"].tolist()
         shapes = model_df["shapes"].tolist()
 
+        total_correct = 0
         lshape_count = 0
         nlshape_count = 0
 
@@ -27,6 +28,7 @@ if __name__ == "__main__":
                     lshape_count += 1
                 if shape == "NL":
                     nlshape_count += 1
+                total_correct += 1
         l_acc = lshape_count / all_lshape_count * 100
         nl_acc = nlshape_count / all_nlshape_count * 100
 
@@ -34,8 +36,9 @@ if __name__ == "__main__":
         df["filename"] = [model]
         df["l_acc"] = [l_acc]
         df["nl_acc"] = [nl_acc]
+        df["total_acc"] = [total_correct / len(predictions) * 100]
 
         df.to_csv(
-            "../../data/fixed_run/analysis/stem_accuracies/" + model + ".csv",
+            "../../data/analysis/stem_accuracies/" + model + ".csv",
             index=False,
         )
