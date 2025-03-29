@@ -17,6 +17,7 @@ OpenNMT-py = "1.2.0"
 Sphinx = "^4.3.2"
 black =  "^21.12b0"
 docopt= "^0.6.2"
+fairseq = "0.10.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
