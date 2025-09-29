@@ -1,2 +1,11 @@
 scripts/__pycache__/
 tests/__pycache__/
+scripts/consonant_pair/__pycache__/
+scripts/cell_combinations/__pycache__/
+scripts/effect_batch_size/__pycache__/
+scripts/l_nl_accuracies/__pycache__/
+scripts/memorization_generalization/__pycache__/
+scripts/overall_accuracy/__pycache__/
+scripts/stem_accuracies/__pycache__/
+scripts/suffix_errors/__pycache__/
+
