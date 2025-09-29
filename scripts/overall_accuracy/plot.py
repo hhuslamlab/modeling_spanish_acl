@@ -1,4 +1,6 @@
 import matplotlib.pyplot as plt
+import sys, os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 import statistics
 from math import sqrt
 import tikzplotlib
@@ -26,7 +28,7 @@ def plot_confidence_interval(
 
 
 if __name__ == "__main__":
-    df = pd.read_csv("../../data/fixed_run/analysis/accuracies/combine.csv")
+    df = pd.read_csv("../data/fixed_run/analysis/accuracies/combine.csv")
     models = df["filename"].tolist()
     accs = df["accuracy"].tolist()
     acc_10L, acc_50L, acc_90L = [], [], []
@@ -56,4 +58,4 @@ if __name__ == "__main__":
     plt.ylim(bottom=0)
     # plt.legend(('L-shape', 'NL-shape'))
     plt.title("")
-    tikzplotlib.save("../../data/fixed_run/analysis/plots/overall_accuracy_white.tex")
+    tikzplotlib.save("../data/fixed_run/analysis/plots/overall_accuracy_white.tex")

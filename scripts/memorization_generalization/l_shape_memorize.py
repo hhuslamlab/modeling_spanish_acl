@@ -1,6 +1,10 @@
 """
 we are checking if the test triples are attested and the model's prediction for that test item is correct or wrong
 """
+import sys, os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+
 from typing import List
 import json
 import pandas as pd

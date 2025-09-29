@@ -9,13 +9,12 @@ import sys, os, json
 import pandas as pd
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
 from config import AR_SUFFIX_DICT, ER_SUFFIX_DICT, IR_SUFFIX_DICT, all_models
 
 from consonant_pair.get_stems import *
 
 
-def get_stem_and_suffix(items: List[str], form_suffixes: List[str]):
+def get_stem_and_suffix(items: List[str], form_suffixes: List[str]) -> tuple[List[str], List[str]]:
     item_stems = []
     item_suffixes = []
 
@@ -49,7 +48,7 @@ if __name__ == "__main__":
         run = model.split("_")[2]
 
         lemmas_df = pd.read_csv(
-            "../../data/fixed_run/analysis/lemmas_sf/"
+            "../data/fixed_run/analysis/lemmas_sf/"
             + "/test/run"
             + run
             + "/"
@@ -80,7 +79,7 @@ if __name__ == "__main__":
                 lemma_type.append("ar")
 
         pred_df = pd.read_csv(
-            "../../data/fixed_run/analysis/pred_sf/" + model + ".csv"
+            "../data/fixed_run/analysis/pred_sf/" + model + ".csv"
         ).fillna("")
 
         preds = pred_df["pred"].tolist()
@@ -109,7 +108,7 @@ if __name__ == "__main__":
         ar_df["test_stems"] = ar_test_stem
         ar_df["test_suffixes"] = ar_test_suffixes
         ar_df.to_csv(
-            "../../data/fixed_run/analysis/suffix_errors/"
+            "../data/fixed_run/analysis/suffix_errors/"
             + condition
             + "/"
             + "ar_suffixes/"
@@ -125,7 +124,7 @@ if __name__ == "__main__":
         er_df["test_stems"] = er_test_stem
         er_df["test_suffixes"] = er_test_suffixes
         er_df.to_csv(
-            "../../data/fixed_run/analysis/suffix_errors/"
+            "../data/fixed_run/analysis/suffix_errors/"
             + condition
             + "/"
             + "er_suffixes/"
@@ -141,7 +140,7 @@ if __name__ == "__main__":
         ir_df["test_stems"] = ir_test_stem
         ir_df["test_suffixes"] = ir_test_suffixes
         ir_df.to_csv(
-            "../../data/fixed_run/analysis/suffix_errors/"
+            "../data/fixed_run/analysis/suffix_errors/"
             + condition
             + "/"
             + "ir_suffixes/"

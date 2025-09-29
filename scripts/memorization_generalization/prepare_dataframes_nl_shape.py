@@ -1,6 +1,10 @@
 """
 prepare dataset for logistic regression for NL shape verbs
 """
+import sys, os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+
 from typing import List
 from collections import Counter
 import pandas as pd

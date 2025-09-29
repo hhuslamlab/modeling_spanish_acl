@@ -8,6 +8,10 @@ section 6.4 only looks at errors. So only the subset of wrong predictions in mem
 
 The question is: We look at all wrongly predicted forms and the coda stem consonant - is there a difference between known triplets from training and new triplets? possible answers: 1) no diff 2) yes, more errors in new triplets (= expected), 3)  yes, more errors in training triplets
 """
+import sys, os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+
 import pandas as pd
 from config import condition_90L_10NL, condition_50L_50NL, condition_10L_90NL
 from prepare_dataframes_nl_shape import get_train_triples

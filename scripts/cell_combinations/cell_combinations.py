@@ -7,14 +7,17 @@ Usage:
 Options:
     --condition=<c>`    Specify the condition (e.g: 10L_90NL or 50L_50NL or 90L_10NL
 """
+import sys, os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 from docopt import docopt
-from typing import Any
+from typing import Any, List
 import pandas as pd
 import re
 from config import condition_10L_90NL, condition_50L_50NL, condition_90L_10NL
 
 
-def get_lines(filename):
+def get_lines(filename: str) -> List[str]:
     with open(filename) as f:
         lines = f.readlines()
         lines = [item.strip().replace(" ", "") for item in lines]
@@ -22,7 +25,7 @@ def get_lines(filename):
     return lines
 
 
-def get_prediction_status(tgts, preds, shapes):
+def get_prediction_status(tgts: List[str], preds: List[str], shapes: List[str]) -> tuple[List[str], List[str], List[str]]:
     total = []
     total_l = []
     total_nl = []
@@ -47,7 +50,7 @@ def get_prediction_status(tgts, preds, shapes):
     return total, total_l, total_nl
 
 
-def write_prediction_status(model, status, split):
+def write_prediction_status(model: str, status: List[str], split: str) -> None:
     with open(
         "../data/fixed_run/analysis/prediction_status/" + split + "/" + model, "w+"
     ) as f:

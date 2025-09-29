@@ -5,12 +5,13 @@ Script to get stem-final consonants overlap between test and train.
 Usage:
     freq_train_test_sf.py
 """
+from typing import Counter as CounterType, Tuple
 import os, sys
 import pandas as pd
 from collections import Counter
 
 
-def get_l_shaped_test_count(l_shaped_test):
+def get_l_shaped_test_count(l_shaped_test: pd.DataFrame) -> CounterType[Tuple[str, str]]:
     l_shaped_test_lemma_sf = l_shaped_test["lemmas_sf"]
     l_shaped_test_tgt_sf = l_shaped_test["tgt_sf"]
     l_shaped_test_zip = list(zip(l_shaped_test_lemma_sf, l_shaped_test_tgt_sf))
@@ -19,7 +20,7 @@ def get_l_shaped_test_count(l_shaped_test):
     return counter_lshaped_test
 
 
-def get_l_shaped_train_count(l_shaped_train):
+def get_l_shaped_train_count(l_shaped_train: pd.DataFrame) -> CounterType[Tuple[str, str]]:
     l_shaped_train_lemma_sf = l_shaped_train["lemmas_sf"]
     l_shaped_train_tgt_sf = l_shaped_train["tgt_sf"]
     l_shaped_train_zip = list(zip(l_shaped_train_lemma_sf, l_shaped_train_tgt_sf))
@@ -45,7 +46,7 @@ if __name__ == "__main__":
         run = model.split("_")[2]
 
         l_shaped_test = pd.read_csv(
-            "../../data/fixed_run/analysis/lemma_train_test_sf/l_shaped/test"
+            "../data/fixed_run/analysis/lemma_train_test_sf/l_shaped/test"
             + "/run"
             + run
             + "/"
@@ -54,7 +55,7 @@ if __name__ == "__main__":
         )
 
         l_shaped_train = pd.read_csv(
-            "../../data/fixed_run/analysis/lemma_train_test_sf/l_shaped/train"
+            "../data/fixed_run/analysis/lemma_train_test_sf/l_shaped/train"
             + "/run"
             + run
             + "/"

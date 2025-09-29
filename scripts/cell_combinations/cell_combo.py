@@ -1,14 +1,17 @@
 """
 cell combination analysis
 """
+import sys, os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
+from typing import List
 import pandas as pd
 from config import condition_10L_90NL, condition_50L_50NL, condition_90L_10NL
 
 
 def get_cell_combo_acc(
-    cell_combo, cell_shape, cell_info, shapes, correct_wrong_samples
-):
+    cell_combo: str, cell_shape: str, cell_info: List[str], shapes: List[str], correct_wrong_samples: List[str]
+) -> float:
     cell_combo_shape_cells = 0
     cell_combo_correct_shape = 0
     for idx, cell_info in enumerate(cell_infos):
@@ -26,7 +29,7 @@ def get_cell_combo_acc(
     return round(cell_combo_correct_shape / cell_combo_shape_cells * 100, 2)
 
 
-def get_cell_tags(filename):
+def get_cell_tags(filename: str) -> List[str]:
     data = get_src(filename)
     all_cell_tags = []
     for item in data:

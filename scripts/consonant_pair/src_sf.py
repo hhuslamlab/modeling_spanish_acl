@@ -7,6 +7,7 @@ Usage:
 Options:
    --split=<s>                       Provide split (train, test)
 """
+from typing import List, Tuple
 import sys, os
 from docopt import docopt
 import re
@@ -19,7 +20,7 @@ from config import AR_SUFFIX_DICT, ER_SUFFIX_DICT, IR_SUFFIX_DICT, all_models
 from get_stems import get_stem
 
 
-def get_srcs(input_line):
+def get_srcs(input_line: str) -> Tuple[str, str]:
     """
     get srcs
     """
@@ -53,7 +54,7 @@ if __name__ == "__main__":
         condition = model.split("_")[0] + "_" + model.split("_")[1]
         run = model.split("_")[2]
         with open(
-            "../../data/fixed_run/"
+            "../data/fixed_run/"
             + condition
             + "/"
             + split
@@ -97,6 +98,6 @@ if __name__ == "__main__":
         df["src2_sf"] = src2_sf
 
         df.to_csv(
-            "../../data/fixed_run/analysis/src_sf/" + split + "/" + model + ".csv",
+            "../data/fixed_run/analysis/src_sf/" + split + "/" + model + ".csv",
             index=False,
         )

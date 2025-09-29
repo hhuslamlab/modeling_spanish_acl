@@ -1,1 +1,1 @@
-awk 'fnr > 1' ../../data/analysis/stem_accuracies/*.csv > ../../data/analysis/stem_accuracies/combine.csv
+awk 'fnr > 1' ../data/analysis/stem_accuracies/*.csv > ../data/analysis/stem_accuracies/combine.csv

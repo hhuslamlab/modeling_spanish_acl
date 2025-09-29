@@ -1,6 +1,7 @@
 """
 plot stem accuracies
 """
+from typing import List, Dict, Tuple
 import os, sys
 import tikzplotlib
 import pandas as pd
@@ -14,8 +15,8 @@ from config import condition_10L_90NL, condition_50L_50NL, condition_90L_10NL
 
 
 def plot_confidence_interval(
-    x, values, point_color, label, z=1.96, color="#2187bb", horizontal_line_width=0.25
-):
+    x: float, values: List[float], point_color: str, label: str, z: float = 1.96, color: str = "#2187bb", horizontal_line_width: float = 0.25
+) -> Tuple[float, float]:
     mean = statistics.mean(values)
     stdev = statistics.stdev(values)
     confidence_interval = z * stdev / sqrt(len(values))
@@ -32,9 +33,9 @@ def plot_confidence_interval(
     return mean, confidence_interval
 
 
-def final(filename):
+def final(filename: str) -> Dict[str, int]:
     data = pd.read_csv(
-        "../../data/analysis/stem_accuracies/" + filename + ".csv"
+        "../data/analysis/stem_accuracies/" + filename + ".csv"
     )
     return {
         "l_acc": round(data["l_acc"].tolist()[0]),
@@ -79,4 +80,4 @@ if __name__ == "__main__":
     plt.ylim(bottom=0)
     # plt.legend(('L-shape', 'NL-shape'))
     plt.title("")
-    tikzplotlib.save("../../data/analysis/plots/stem_accuracies.tex")
+    tikzplotlib.save("../data/analysis/plots/stem_accuracies.tex")

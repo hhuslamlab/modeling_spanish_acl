@@ -8,6 +8,10 @@ Options:
     --condition=<c>`    Specify the condition (e.g: 10L_90NL or 50L_50NL or 90L_10NL
     --train_triples_set=<tt>    Specify "all" if you want to check against all training triples or just "L" if you want to check it against L-shaped training triples.
 """
+import sys, os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+
 from docopt import docopt
 import pandas as pd
 from config import condition_90L_10NL, condition_50L_50NL, condition_10L_90NL

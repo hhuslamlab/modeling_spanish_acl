@@ -1,6 +1,10 @@
 """
 here we compute the overlap of stem final consonants across predictions set and train set for wrong predictions.
 """
+import sys, os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+
 
 import pandas as pd
 from config import all_models

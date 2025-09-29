@@ -10,11 +10,12 @@ Options:
    --config=<c>                     Provide configuration (eg: 10L_90NL_1_1,90L_10NL_3_1, ....)
 """
 from docopt import docopt
+from typing import Dict, List, Tuple
 import sys, os
 import json
 
 
-def read_predictions(fprediction):
+def read_predictions(fprediction: str) -> Dict[int, str]:
     id2pred = {}
     with open(fprediction) as f:
         for line in f:
@@ -32,7 +33,7 @@ def read_predictions(fprediction):
     return id2pred
 
 
-def read_gold(fgold):
+def read_gold(fgold: str) -> Dict[int, str]:
     idx = 0
     id2gold = {}
     with open(fgold) as f:
@@ -42,7 +43,7 @@ def read_gold(fgold):
     return id2gold
 
 
-def eval_metrics(id2pred, id2gold):
+def eval_metrics(id2pred: Dict[int, str], id2gold: Dict[int, str]) -> Tuple[int, int, List[str]]:
     guess = 0
     correct = 0
     wrong_preds = []

@@ -7,6 +7,9 @@ Usage:
 Options:
     --filepath=<f>      Specify the filepath of all the csv files you want to combine and save the combined csv in.
 """
+import sys, os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 from docopt import docopt
 import os
 import pandas as pd

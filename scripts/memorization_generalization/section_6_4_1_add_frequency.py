@@ -1,6 +1,10 @@
 """
 Add frequency information for each dataframe in section 6.4.1
 """
+import sys, os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+
 from collections import Counter
 import pandas as pd
 from config import condition_10L_90NL, condition_50L_50NL, condition_90L_10NL

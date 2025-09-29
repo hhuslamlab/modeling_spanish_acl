@@ -1,6 +1,10 @@
 """
 Here we check the overlap between sfs of src1, src2 and tgt/pred in test and the training sets of all L-shape forms.
 """
+import sys, os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+
 
 import pandas as pd
 from config import all_models

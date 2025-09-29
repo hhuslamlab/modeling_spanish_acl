@@ -9,7 +9,6 @@ import sys, os, json
 import pandas as pd
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
 from config import AR_SUFFIX_DICT, ER_SUFFIX_DICT, IR_SUFFIX_DICT, all_models
 
 
@@ -26,7 +25,7 @@ if __name__ == "__main__":
         run = model.split("_")[2]
 
         with open(
-            "../../data/fixed_run/"
+            "../data/fixed_run/"
             + condition
             + "/test/run"
             + run
@@ -38,7 +37,7 @@ if __name__ == "__main__":
             ]
 
         er_df = pd.read_csv(
-            "../../data/fixed_run/analysis/suffix_errors/"
+            "../data/fixed_run/analysis/suffix_errors/"
             + condition
             + "/"
             + suffixes[0]
@@ -48,7 +47,7 @@ if __name__ == "__main__":
         )
 
         ar_df = pd.read_csv(
-            "../../data/fixed_run/analysis/suffix_errors/"
+            "../data/fixed_run/analysis/suffix_errors/"
             + condition
             + "/"
             + suffixes[1]
@@ -58,7 +57,7 @@ if __name__ == "__main__":
         )
 
         ir_df = pd.read_csv(
-            "../../data/fixed_run/analysis/suffix_errors/"
+            "../data/fixed_run/analysis/suffix_errors/"
             + condition
             + "/"
             + suffixes[2]
@@ -156,7 +155,7 @@ if __name__ == "__main__":
         overall_df["accuracy_when_stems_are_correct"] = [
             round(
                 (overall_correct - suffix_errors_when_stems_are_correct)
-                / overall_errors)
+                / overall_errors
                 * 100,
                 2,
             )
@@ -164,13 +163,13 @@ if __name__ == "__main__":
         overall_df["accuracy_when_stems_are_incorrect"] = [
             round(
                 (overall_correct - suffix_errors_when_stems_are_incorrect)
-                / overall_errors)
+                / overall_errors
                 * 100,
                 2,
             )
         ]
         overall_df.to_csv(
-            "../../data/fixed_run/analysis/suffix_accuracies/"
+            "../data/fixed_run/analysis/suffix_accuracies/"
             + condition
             + "/overall_accuracies/"
             + model
@@ -213,7 +212,7 @@ if __name__ == "__main__":
             round(lshaped_overall_correct / lshaped_preds * 100, 2)
         ]
         lshaped_overall_df.to_csv(
-            "../../data/fixed_run/analysis/suffix_accuracies/"
+            "../data/fixed_run/analysis/suffix_accuracies/"
             + condition
             + "/lshaped/overall_accuracies/"
             + model
@@ -233,7 +232,7 @@ if __name__ == "__main__":
             round(nlshaped_overall_correct / nlshaped_preds * 100, 2)
         ]
         nlshaped_overall_df.to_csv(
-            "../../data/fixed_run/analysis/suffix_accuracies/"
+            "../data/fixed_run/analysis/suffix_accuracies/"
             + condition
             + "/nlshaped/overall_accuracies/"
             + model
@@ -271,7 +270,7 @@ if __name__ == "__main__":
             round(ar_present_in_verb_class / num_ar_errors * 100, 2)
         ]
         num_ar_df.to_csv(
-            "../../data/fixed_run/analysis/suffix_accuracies/"
+            "../data/fixed_run/analysis/suffix_accuracies/"
             + condition
             + "/"
             + suffixes[1]
@@ -312,7 +311,7 @@ if __name__ == "__main__":
             round(er_present_in_verb_class / num_er_errors * 100, 2)
         ]
         num_er_df.to_csv(
-            "../../data/fixed_run/analysis/suffix_accuracies/"
+            "../data/fixed_run/analysis/suffix_accuracies/"
             + condition
             + "/"
             + suffixes[0]
@@ -352,7 +351,7 @@ if __name__ == "__main__":
             round(ir_present_in_verb_class / num_ir_errors * 100, 2)
         ]
         num_ir_df.to_csv(
-            "../../data/fixed_run/analysis/suffix_accuracies/"
+            "../data/fixed_run/analysis/suffix_accuracies/"
             + condition
             + "/"
             + suffixes[2]

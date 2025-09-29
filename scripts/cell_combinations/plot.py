@@ -8,6 +8,7 @@ Options:
     --condition=<c>`    Specify the condition (e.g: 10L_90NL or 50L_50NL or 90L_10NL)
 """
 from docopt import docopt
+from typing import List
 import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import figure
@@ -15,7 +16,7 @@ import numpy as np
 import tikzplotlib
 
 
-def select_columns(df, col_names):
+def select_columns(df: pd.DataFrame, col_names: List[str]) -> pd.DataFrame:
     new_df = df.loc[:, col_names]
     return new_df
 

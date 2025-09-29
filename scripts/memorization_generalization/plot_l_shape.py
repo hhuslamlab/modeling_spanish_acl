@@ -1,6 +1,10 @@
 """
 plot for lshape
 """
+import sys, os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+from typing import Any, Dict
 import math
 import matplotlib.pyplot as plt
 import numpy as np
@@ -9,7 +13,7 @@ from config import condition_10L_90NL, condition_50L_50NL, condition_90L_10NL
 import tikzplotlib
 
 
-def define_box_properties(plot_name, color_code, label):
+def define_box_properties(plot_name: Dict[str, Any], color_code: str, label: str) -> None:
     for k, v in plot_name.items():
         plt.setp(plot_name.get(k), color=color_code)
 

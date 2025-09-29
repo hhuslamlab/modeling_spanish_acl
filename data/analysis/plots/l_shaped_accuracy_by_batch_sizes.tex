@@ -1,0 +1,83 @@
+% This file was created with tikzplotlib v0.10.1.
+\begin{tikzpicture}
+
+\definecolor{darkslategray38}{RGB}{38,38,38}
+\definecolor{lavender234234242}{RGB}{234,234,242}
+\definecolor{lightgray204}{RGB}{204,204,204}
+\definecolor{mediumseagreen85168104}{RGB}{85,168,104}
+\definecolor{peru22113282}{RGB}{221,132,82}
+\definecolor{steelblue76114176}{RGB}{76,114,176}
+
+\begin{axis}[
+axis background/.style={fill=lavender234234242},
+axis line style={white},
+legend cell align={left},
+legend style={
+  fill opacity=0.8,
+  draw opacity=1,
+  text opacity=1,
+  at={(0.97,0.03)},
+  anchor=south east,
+  draw=lightgray204,
+  fill=lavender234234242
+},
+tick align=outside,
+tick pos=left,
+x grid style={white},
+xlabel=\textcolor{darkslategray38}{Batch Size},
+xmajorgrids,
+xmin=-0.35, xmax=7.35,
+xtick style={color=darkslategray38},
+xtick={0,1,2,3,4,5,6,7},
+xtick={0,1,2,3,4,5,6,7},
+xtick={0,1,2,3,4,5,6,7},
+xtick={0,1,2,3,4,5,6,7},
+xticklabels={32,64,128,256,400,512,800,3600},
+xticklabels={32,64,128,256,400,512,800,3600},
+xticklabels={32,64,128,256,400,512,800,3600},
+xticklabels={32,64,128,256,400,512,800,3600},
+y grid style={white},
+ylabel=\textcolor{darkslategray38}{L-shaped Accuracy (\%)},
+ymajorgrids,
+ymin=30, ymax=100,
+ytick style={color=darkslategray38}
+]
+\addplot [thick, steelblue76114176, mark=*, mark size=4, mark options={solid}]
+table {%
+0 61.88
+1 61.61
+2 64.71
+3 46.27
+4 36.75
+5 34.86
+6 34.17
+7 46.74
+};
+\addlegendentry{10%L-90%NL}
+\addplot [thick, peru22113282, mark=square*, mark size=4, mark options={solid}]
+table {%
+0 87.42
+1 86.16
+2 84.94
+3 81.14
+4 72.31
+5 75.73
+6 82.67
+7 80.35
+};
+\addlegendentry{50%L-50%NL}
+\addplot [thick, mediumseagreen85168104, mark=triangle*, mark size=4, mark options={solid}]
+table {%
+0 88.62
+1 89.24
+2 87.18
+3 87.61
+4 88.75
+5 87.7
+6 88.43
+7 86.13
+};
+\addlegendentry{90%L-10%NL}
+\end{axis}
+
+\end{tikzpicture}

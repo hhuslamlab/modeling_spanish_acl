@@ -1,6 +1,10 @@
 """
 we filter the sfs for forms of L-shaped verbs. we first take the index of the test items from the fixed_run/analysis/stems/
 """
+import sys, os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+
 
 import pandas as pd
 from config import all_models

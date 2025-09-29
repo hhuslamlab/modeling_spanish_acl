@@ -1,13 +1,16 @@
 """
 we are checking if the test triples are attested in the training test. if the triples are seen in the training, we term it as 'old' and if not, then its 'new' for NL verbs.
 """
+import sys, os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 from typing import List
 import json
 import pandas as pd
 from config import all_models
 
 
-def get_nlshaped_forms():
+def get_nlshaped_forms() -> List[str]:
     with open("../../data/ipa_clean_non_lshaped_dict.json") as f:
         nlshaped_dict = json.load(f)
 

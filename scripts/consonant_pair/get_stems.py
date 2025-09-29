@@ -1,16 +1,16 @@
 """
 Script to get stems.
 """
+from typing import List, Optional
 import sys, os
 import pandas as pd
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from config import AR_SUFFIX_DICT, ER_SUFFIX_DICT, IR_SUFFIX_DICT, all_models
-import pandas as pd
 
 
-def get_stem(form, suffixes):
+def get_stem(form: str, suffixes: List[str]) -> Optional[str]:
     """
     get stem final consonant of the form given a suffix
     """
@@ -44,14 +44,14 @@ if __name__ == "__main__":
         condition = model.split("_")[0] + "_" + model.split("_")[1]
         run = model.split("_")[2]
 
-        with open("../../data/fixed_run/predictions/" + model + ".txt") as f:
+        with open("../data/fixed_run/predictions/" + model + ".txt") as f:
             preds = f.readlines()
             preds = [
                 item.split(",")[1].strip().replace(" ", "").replace("ˈ", "")
                 for item in preds
             ]
         with open(
-            "../../data/fixed_run/"
+            "../data/fixed_run/"
             + condition
             + "/test/run"
             + run
@@ -64,7 +64,7 @@ if __name__ == "__main__":
                 item.strip().replace(" ", "").replace("ˈ", "") for item in test_data
             ]
 
-        with open("../../data/fixed_run/analysis/shape_info/" + model) as f:
+        with open("../data/fixed_run/analysis/shape_info/" + model) as f:
             shapes = f.readlines()
             shapes = [item.strip() for item in shapes]
 
@@ -90,4 +90,4 @@ if __name__ == "__main__":
         df["test_stems"] = test_stems
         df["shapes"] = shapes_
 
-        df.to_csv("../../data/fixed_run/analysis/stems/" + model + ".csv", index=False)
+        df.to_csv("../data/fixed_run/analysis/stems/" + model + ".csv", index=False)
