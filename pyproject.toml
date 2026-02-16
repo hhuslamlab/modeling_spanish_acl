@@ -18,7 +18,7 @@ black =  "^21.12b0"
 docopt= "^0.6.2"
 fairseq = "0.10.2"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 pytest = "^5.2"
 
 [build-system]
