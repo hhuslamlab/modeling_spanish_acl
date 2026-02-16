@@ -208,6 +208,16 @@ data/analysis/
 └── suffix_errors/{10L_90NL,50L_50NL,90L_10NL}/
 ```
 
+### Non-neural baseline
+
+The non-neural baseline (adapted from SIGMORPHON 2020 Shared Task) is in `scripts/non_neural/non_neural.py`. It uses Levenshtein-based string transduction rules.
+
+```bash
+python scripts/non_neural/non_neural.py -l <lang> -p <path_to_data> -o
+```
+
+Input files must be tab-separated (`lemma\tfeatures\tform`) with extensions `.trn` (training) and `.dev` (development).
+
 ### Plots
 
 All plots are in `data/analysis/plots/` (LaTeX/pgfplots format).
