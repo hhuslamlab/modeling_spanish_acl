@@ -6,8 +6,8 @@ SEED=111
 ##SEED=64
 ##SEED=212
 ##SEED=1000
-DATABIN=fixed_data_bin
-CKPTS=fixed_checkpoints
+DATABIN=data-bin
+CKPTS=checkpoints
 
 LANGUAGE=$1
 
