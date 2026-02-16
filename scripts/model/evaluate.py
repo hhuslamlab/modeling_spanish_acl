@@ -65,6 +65,9 @@ if __name__ == "__main__":
     config = args["--config"]
     id2pred = read_predictions(fprediction)
 
+    if not os.path.exists("processed_predictions_orig"):
+        os.makedirs("processed_predictions_orig")
+
     with open("processed_predictions_orig/" + config + ".txt", "w+") as f:
         for k, v in id2pred.items():
             f.write(str(k) + "," + v + "\n")
@@ -72,15 +75,8 @@ if __name__ == "__main__":
     id2gold = read_gold(fgold)
     acc, wrong_preds = eval_metrics(id2pred, id2gold)
 
-    if not os.path.exists("processed_predictions_orig"):
-        os.makedirs("processed_predictions_orig")
-
     with open(
-        "processed_predictions_orig/wrong_preds_"
-        + config
-        + "_"
-        + halsize
-        + ".txt",
+        "processed_predictions_orig/wrong_preds_" + config + ".txt",
         "w+",
     ) as f:
         for i in wrong_preds:
@@ -89,7 +85,5 @@ if __name__ == "__main__":
     if not os.path.exists("accuracies_orig"):
         os.makedirs("accuracies_orig")
 
-    with open(
-        "accuracies_orig/" + "_" + config + "_" + halsize + ".txt", "w+"
-    ) as f:
-        f.write("Accuracy for {} test set: {}%".format(acc))
+    with open("accuracies_orig/" + config + ".txt", "w+") as f:
+        f.write("Accuracy for {} test set: {}%".format(config, acc))
