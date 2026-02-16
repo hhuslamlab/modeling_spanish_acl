@@ -2,14 +2,12 @@
 
 ## Prerequisites
 
-- **Python** 3.8.10 (or 3.9 -- see note below)
+- **Python** 3.9
 - **PyTorch** >= 1.10.0
 - **Poetry** (Python package manager)
 - **R** with packages: `lme4`, `emmeans` (for statistical analysis)
 - **LaTeX** with `pgfplots` package (for generating publication plots)
 - **GPU** recommended for model training (fairseq)
-
-> **Note:** There is a version conflict between `pyproject.toml` (Python 3.8.10) and `README.org` (Python 3.9). Verify which version works with your fairseq installation.
 
 ## Installation
 

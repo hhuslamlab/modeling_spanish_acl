@@ -57,6 +57,16 @@ Each model is identified as `{condition}_{run}_{seed_index}` (e.g., `90L_10NL_3_
 
 For multi-seed runs, edit the `SEED` variable in `scripts/model/train.sh` before each run.
 
+## Quick Reproduction
+
+```bash
+# Analysis only (uses pre-computed predictions)
+bash reproduce.sh
+
+# Full pipeline: train all 36 models + analysis (requires GPU)
+bash reproduce.sh --train
+```
+
 ## Usage
 
 To replicate the analysis of each section, run the standalone scripts in the corresponding directories.
@@ -104,7 +114,9 @@ data/
 
 ### Predictions
 
-All predictions are in `data/predictions/`.
+Pre-computed predictions for all 36 models are in `data/predictions/` as `.txt` files in `index,form` format (e.g., `0,supeɾbenɡˈajs`). These are the processed outputs used by the analysis scripts.
+
+If retraining, `generate.sh` produces raw fairseq output (`.pred` files). Run `evaluate.py` to convert these to the processed format used by the analysis pipeline.
 
 ### Analysis (Section 4)
 

@@ -4,7 +4,7 @@
 
 - **Name:** Modeling Spanish Morphological Patterns with Transformers
 - **Type:** Monolith (research data analysis pipeline)
-- **Primary Language:** Python 3.8.10
+- **Primary Language:** Python 3.9
 - **Architecture:** Sequential research pipeline (fairseq Transformer)
 - **Paper:** ACL 2025 (Findings), pages 4474-4489
 
@@ -25,8 +25,7 @@
 
 ## Existing Documentation
 
-- [README](../README.org) - Original project README (Org-mode format)
-- [Project Context for AI Agents](../_bmad-output/project-context.md) - Critical rules and patterns for AI-assisted development
+- [README](../README.md) - Project README
 
 ## Getting Started
 

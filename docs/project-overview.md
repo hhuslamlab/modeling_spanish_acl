@@ -24,7 +24,7 @@ The L-shaped pattern is an irregular morphological pattern in Spanish where the 
 
 | Category | Technology | Version |
 |---|---|---|
-| Language | Python | 3.8.10 |
+| Language | Python | 3.9 |
 | Deep Learning | PyTorch | >= 1.10.0 |
 | Seq2Seq Framework | fairseq | 0.10.2 |
 | Package Manager | Poetry | - |
