@@ -1,11 +1,7 @@
 #!/bin/bash
 
+# Seed mapping: _1=111, _2=312, _3=112, _4=64
 SEED=111
-##SEED=312
-##SEED=112
-##SEED=64
-##SEED=212
-##SEED=1000
 DATABIN=data-bin
 CKPTS=checkpoints
 
@@ -33,9 +29,6 @@ DRP=0.3
 # Batch size
 BTS=400
 # Max-update
-#MXU=$2
-#MXU=30000
-#MXU=10000
 MXU=10000
 # Warmup update
 WMU=4000
@@ -46,11 +39,7 @@ LST=0.1
 # clip-norm
 CNM=1.0
 
-# Max-epoch
-#MPC=10000
-
 # save-interval
-#SNT=50
 SNT=10
 
 fairseq-train "${DATABIN}/${LANGUAGE}" \

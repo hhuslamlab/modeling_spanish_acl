@@ -11,6 +11,8 @@ Code and data for the paper:
 - Python 3.9
 - PyTorch >= 1.10.0
 - [Poetry](https://python-poetry.org/) (Python package manager)
+- GPU (required for model training)
+- LaTeX with `pgfplots` package (for generating publication plots)
 
 ### Poetry
 
@@ -209,6 +211,14 @@ data/analysis/
 ### Plots
 
 All plots are in `data/analysis/plots/` (LaTeX/pgfplots format).
+
+### Tests
+
+To verify dataset composition (L-shaped verb ratios per condition):
+
+```bash
+pytest tests/
+```
 
 ### Misclassifications
 
