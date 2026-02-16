@@ -32,6 +32,31 @@ Install R with the following packages:
 install.packages(c("lme4", "emmeans"))
 ```
 
+## Experimental Design
+
+We train 36 models: 3 conditions x 3 runs x 4 seeds.
+
+### Model identifiers
+
+Each model is identified as `{condition}_{run}_{seed_index}` (e.g., `90L_10NL_3_4`).
+
+| Condition | L-shaped % | NL-shaped % |
+|---|---|---|
+| `10L_90NL` | ~10% | ~90% |
+| `50L_50NL` | ~50% | ~50% |
+| `90L_10NL` | ~90% | ~10% |
+
+### Seed mapping
+
+| Seed index | Seed value |
+|---|---|
+| `_1` | 111 |
+| `_2` | 312 |
+| `_3` | 112 |
+| `_4` | 64 |
+
+For multi-seed runs, edit the `SEED` variable in `scripts/model/train.sh` before each run.
+
 ## Usage
 
 To replicate the analysis of each section, run the standalone scripts in the corresponding directories.
@@ -44,11 +69,17 @@ All training and evaluation scripts are under `scripts/model/`:
 # Preprocess
 bash scripts/model/preprocess.sh <model_id>
 
-# Train
+# Train (edit SEED in train.sh for each seed index)
 bash scripts/model/train.sh <model_id>
 
 # Generate predictions
 bash scripts/model/generate.sh <model_id>
+
+# Evaluate
+python scripts/model/evaluate.py \
+  --prediction-filepath=predictions/<model_id>.pred \
+  --gold-filepath=<gold_file_path> \
+  --config=<model_id>
 ```
 
 ### Dataset (Section 3: Methodology)

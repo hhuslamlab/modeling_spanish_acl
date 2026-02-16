@@ -9,8 +9,8 @@ CKPTS=checkpoints
 fairseq-generate \
       "${DATABIN}/${LANGUAGE}" \
       --gen-subset "test" \
-      --source-lang "${LANGUAGE}.input" \
-      --target-lang "${LANGUAGE}.output" \
+      --source-lang "${LANGUAGE}.src" \
+      --target-lang "${LANGUAGE}.tgt" \
       --path "${CKPTS}/${LANGUAGE}-models/checkpoint_best.pt" \
       --beam 5 \
       > "predictions/${LANGUAGE}.pred"

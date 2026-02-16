@@ -172,8 +172,4 @@ These are defined in `scripts/config.py`.
 
 ## Known Issues
 
-1. **`evaluate.py`**: References undefined variable `halsize`; `format()` call has wrong argument count
-2. **Test suite**: Duplicate function names, typo in function call, string vs int type mismatch
-3. **Path inconsistency**: `train.sh` uses `fixed_data_bin`/`fixed_checkpoints` while `preprocess.sh`/`generate.sh` use `data-bin`/`checkpoints`
-4. **No `poetry.lock`**: Dependency versions may not be exactly reproducible
-5. **Python version conflict**: `pyproject.toml` says 3.8.10, `README.org` says 3.9
+1. **No `poetry.lock`**: Run `poetry lock` to pin exact dependency versions for reproducibility

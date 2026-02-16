@@ -4,8 +4,8 @@ LANGUAGE=$1
 DATABIN=data-bin
 
 fairseq-preprocess \
-    --source-lang="${LANGUAGE}.input" \
-    --target-lang="${LANGUAGE}.output" \
+    --source-lang="${LANGUAGE}.src" \
+    --target-lang="${LANGUAGE}.tgt" \
     --trainpref=train \
     --validpref=valid \
     --testpref=test   \
